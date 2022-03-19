@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
@@ -201,921 +201,391 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .md-inline-math-container mjx-container { zoom: 0.95; }
 
 
-/* Theme adapted from https://codemirror.net/theme/dracula.css */
-/*
-    Name:       dracula
-    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
-
-    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
-*/
-
-.cm-s-inner {
-  padding: 0.5rem 0.2rem;
-  border: 1px solid var(--accent-color) !important;
-  border-radius: 0.25rem;
-}
-
-.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
-  background-color: #282a36 !important;
-  color: #f8f8f2 !important;
-  border: none;
-}
-
-.cm-s-inner .CodeMirror-gutters {
-  width: 5ch;
-  color: #282a36;
-}
-.cm-s-inner .CodeMirror-cursor { border-left: solid thin #f8f8f2 !important; }
-.cm-s-inner .CodeMirror-linenumber {
-  width: 4ch !important;
-  color: #6D8A88;
-}
-
-.cm-s-inner .CodeMirror-line::selection,
-.cm-s-inner .CodeMirror-line > span::selection,
-.cm-s-inner .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
-.cm-s-inner .CodeMirror-line::-moz-selection,
-.cm-s-inner .CodeMirror-line > span::-moz-selection,
-.cm-s-inner .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
-.cm-s-inner span.cm-comment { color: #6272a4; }
-.cm-s-inner span.cm-string, .cm-s-inner span.cm-string-2 { color: #f1fa8c; }
-.cm-s-inner span.cm-number { color: #bd93f9; }
-.cm-s-inner span.cm-variable, .cm-s-inner span.cm-variable-2 { color: #50fa7b; }
-.cm-s-inner span.cm-def { color: white; }
-.cm-s-inner span.cm-operator { color: #ff79c6; }
-.cm-s-inner span.cm-keyword { color: #ff79c6; }
-.cm-s-inner span.cm-atom { color: #bd93f9; }
-.cm-s-inner span.cm-meta { color: #f8f8f2; }
-.cm-s-inner span.cm-tag { color: #ff79c6; }
-.cm-s-inner span.cm-attribute { color: #50fa7b; }
-.cm-s-inner span.cm-qualifier { color: #50fa7b; }
-.cm-s-inner span.cm-property { color: #66d9ef; }
-.cm-s-inner span.cm-builtin { color: #50fa7b; }
-.cm-s-inner span.cm-variable-3, .cm-s-inner span.cm-type { color: #ffb86c; }
-
-.cm-s-inner .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
-.cm-s-inner .CodeMirror-matchingbracket {
-  text-decoration: underline;
-  color: white !important;
-}
-.CodeMirror-selectedtext, .CodeMirror-selected {
-  background: #313746 !important;
-  text-shadow: none;
-}
-/* 
-  Middle East - Night
-  Typora RTL theme
-  design: isapanah.com
-  date: 2019
-  version: 1.1
-*/
-
-@import url("file:///C://Users//oyy//AppData//Roaming//Typora/themes/");
-
-/*
-  Vazir provided by Rastikerdar
-  Downloaded from `https://github.com/rastikerdar/vazir-font`
-*/
-/*
-	Cousine provided by Steve Matteson from Google Fonts
-	Downloaded from `https://fonts.google.com/specimen/Cousine`
-*/
-/** ROOT VARIABLES **/
-
 :root {
-  --bg-color: #1e2022; /* change background */
-  --text-color: #dddddd; /* change text color */
-  --md-char-color: #5b5b5b; /* change color of meta characetrs like `*` in markdown */
-  --meta-content-color: #757575; /* change color of meta contents like image text or link address in markdown */
-  --link-color: #6bcafb; /* change color of hyperlinks */
-
-  --primary-color: #428bca; /* primary color */
-  --primary-btn-border-color: #285e8e; /* primary color for buttons */
-  --primary-btn-text-color: #fff; /* primary text color for buttons */
-  --accent-color: #3c3c3c; /* background accent color */
-
-  --window-border: 1px solid #16161a; /* border for sidebar, etc*/
-
-  --active-file-bg-color: #16161a; /* background color if list item in file tree or file list*/
-  --active-file-text-color: inherit; /* text color for selected file */
-  --active-file-border-color: #777; /* border color for selected file */
-  --active-search-item-bg-color: #212121; /* background color for active search item */
-
-  --side-bar-bg-color: #2b2b2b; /* change background of sidebar*/
-  --item-hover-bg-color: var(--bg-color); /* background of control items when hover, like menu in sidebar*/
-  --item-hover-text-color: white; /* text color upon hovering over menu items */
-  --search-hit-bg-color: #428bca40;
-  --search-select-text-color: var(--text-color); /* Text color for selected searched text */
-  --search-select-bg-color: #428bca90; /* Background color for selected searched text */
-  --rawblock-edit-panel-bd: var(--accent-color); /* Background color for inline HTML "edit panel" blocks */
-  --monospace: "Cousine"; /* monospace font for codes, fences */
-
-  --megamenu-bg-color: var(--side-bar-bg-color); /* background color for unibody megamenu */
-  --megamenu-sidebar-bg-color: var(--bg-color); /* background color for megamenu sidebar */
-  --megamenu-sidebar-hover-bg-color: #161819; /* background color for hovering megamenu sidebar items */
-  --megamenu-sidebar-active-bg-color: #101010; /* background color for active megamenu sidebar items */
-  --megamenu-button-border-color: #9292928f; /* background color for megamenu buttons */
-  --megamenu-item-hover-bg-color: var(--bg-color); /* background color for hovering megamenu items */
-  --megamenu-item-hover-text-color: white; /* text color for hovering megamenu items */
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
 }
 
-/** TAGS **/
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
-html,
-body {
-  font-family: "Vazir", "Lato", sans-serif;
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
-  font-size: 14px;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6, p, a, del, mark, #write p, #write a, #write del, #write mark, #write ul, #write li, #write ol,
-#write table, #write tr, #write td, table, tr, td {
-  direction: rtl;
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
 }
 
-.outline-item{
-  direction: rtl;
-}
-.outline-h2, .outline-h3, .outline-h4,
- .outline-h5, .outline-h6 {
-  margin-right: 10px !important;
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
 }
 
-#md-notification, #md-notification *{
-  direction: ltr;
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Vazir-Bold";
-}
-
-h1 {
-  font-size: 1.8rem;
-  margin: 1rem 0;
-}
-
-h2 {
-  font-size: 1.4rem;
-  margin: 0.7rem 0;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-}
-
-h4 {
-  font-size: 1.1rem;
-  margin: 0.2rem 0;
-}
-
-h5 {
-  font-size: 1rem;
-  margin: 0;
-}
-
-h6 {
-  font-size: 1rem;
-  margin: 0;
-}
-
-p {
-  margin: 0.5rem 0;
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
 }
 
 a {
-  color: var(--link-color);
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
 }
 
-del {
-  color: var(--md-char-color);
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
 }
 
-mark {
-  padding: 2px 1px;
-  background: #fee405;
+li p.first {
+    display: inline-block;
 }
-
-/* Writing area -> line height */
-#write {
-	line-height: 1.6;
+ul,
+ol {
+    padding-left: 30px;
 }
-
-/* Custom list-style */
-#write ol,
-#write ul {
-  padding-left: 2rem;
-  margin: 0.5rem 0;
-  margin-left: 0 !important;
-  padding-left: 0 !important;
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
 }
-
-#write ul {
-  list-style-type: disc;
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
 }
-
-#write ol > li,
-#write ul > li {
-  color: var(--primary-color);
-  padding-left: 0.25em;
-}
-
-#write ol li > *,
-#write ul li > * {
-  color: var(--text-color);
-}
-
-#write .md-task-list-item {
-  transition: all 0.3s;
-}
-
-#write .md-task-list-item > input {
-  -webkit-appearance: initial;
-  display: block;
-  position: absolute;
-  border: 1px solid var(--md-char-color);
-  border-radius: 0.25rem;
-  margin-top: 0.1rem;
-  margin-right: -1.8rem;
-  height: 1.2rem;
-  width: 1.2rem;
-  transition: background 0.4s;
-  right: 0;
-}
-
-#write .md-task-list-item > input:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-#write .md-task-list-item > input:hover {
-  background: var(--accent-color);
-}
-
-#write .md-task-list-item.task-list-done > p {
-  color: var(--md-char-color);
-  text-decoration: line-through;
-}
-
-#write .md-task-list-item > input[checked]::before {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  height: 60%;
-  width: 2px;
-  transform: rotate(40deg);
-  background: var(--text-color);
-}
-
-#write .md-task-list-item > input[checked]::after {
-  content: "";
-  position: absolute;
-  top: 46%;
-  left: 25%;
-  height: 30%;
-  width: 2px;
-  transform: rotate(-40deg);
-  background: var(--text-color);
-}
-
 blockquote {
-  margin: 1rem 0rem 1rem 0;
-  font-family: "Vazir-Bold";
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
 }
 
-blockquote p::before {
-  content: "";
-  position: absolute;
-  right: -2rem;
-  height: 100%;
-  width: 0.25rem;
-  background: var(--primary-color);
+.CodeMirror-lines {
+    padding-left: 4px;
 }
 
-blockquote p:not(:last-child):before {
-  height: calc(100% + 1rem);
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
 }
 
-code,
 .md-fences,
+code,
 tt {
-  font-family: "Cousine", monospace;
-  font-size: 1rem;
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
 }
 
 code {
-  border: 1px solid var(--accent-color);
-  border-radius: 0.25rem;
-  padding: 0 0.125rem;
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
 }
 
-/* Code auto-suggest list menu */
-#fences-auto-suggest .active {
-  background: var(--accent-color);
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
 }
 
-hr {
-  border-color: var(--md-char-color);
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
 }
 
-/* YAML */
-pre.md-meta-block {
-  background-color: transparent;
-  border-bottom: 1px solid var(--md-char-color);
-  padding-bottom: 1rem;
-  opacity: 0.8;
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
 }
 
-/* Tables */
-table {
-  border: 1px solid var(--md-char-color);
-  margin: 1rem 0;
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
 }
 
-thead {
-  background: #4d4d4d;
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
 }
 
-table tr:nth-child(2n) {
-  background: var(--accent-color);
+.md-mathjax-midline {
+    background: #fafafa;
 }
 
-td,
-th {
-  padding: 0.35rem 0.7rem;
-  border: 1px solid var(--md-char-color);
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
 }
 
-/* Table toolbar */
-.md-table-edit {
-  border-top: 1px solid var(--meta-content-color);
-  margin-top: -29px !important;
-  padding: 3px 0;
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
 }
 
-/* Table drag areas */
-.typora-table-drag-area::after {
-  content: "";
-  position: absolute;
-  border: 2px solid var(--text-color);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-#typora-table-row-tracker .typora-table-drag-area::after {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 100%;
-}
-
-#typora-table-col-tracker .typora-table-drag-area::after {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 0;
-}
-
-#typora-table-row-tracker .typora-table-drag-area:hover::after,
-#typora-table-col-tracker .typora-table-drag-area:hover::after {
-  opacity: 1;
-}
-
-/* Table of contents */
-.md-toc-tooltip {
-  z-index: 10;
-}
-
-span.md-toc-item {
-  font-size: 1.1rem;
-  color: var(--primary-btn-border-color);
-}
-
-span.md-toc-h1 {
-  font-family: "Vazir-Bold";
-  font-size: 1.3rem;
-}
-
-span.md-toc-h2 {
-  font-size: 1.2rem;
-}
-
-/* Footnote */
-sup.md-footnote {
-  font-family: "Vazir-Bold";
-  font-size: 0.8rem;
-  padding: 0 4px;
-}
-
-span.md-def-split {
-  min-width: 1ch;
-}
-
-.md-def-name::before,
-.md-def-name::after {
-  color: var(--meta-content-color);
-}
-
-/* Writing area */
-#write {
-  width: 90%;
-  max-width: 700px;
-}
-
-/* Fill whole width of container */
-#write h1,
-#write h2,
-#write h3,
-#write h4,
-#write h5,
-#write h6,
-#write p,
-#write pre {
-  width: auto;
-}
-
-/* Header prefix symbol */
-/* Disable default header symbol */
-#write h3.md-focus::before,
-#write h4.md-focus::before,
-#write h5.md-focus::before,
-#write h6.md-focus::before {
-  border: none;
-  border-radius: 0;
-  left: auto;
-  float: none;
-  padding: 0;
-  vertical-align: baseline;
-  line-height: 20px;
-}
-
-#write h1::before,
-#write h2::before,
-#write h3::before,
-#write h4::before,
-#write h5::before,
-#write h6::before {
-  position: absolute;
-  top: 0;
-  right: calc(100% + 10px);
-  color: var(--md-char-color);
-  font-size: 1rem;
-  font-weight: bold;
-  font-variant: "small-caps";
-}
-
-#write h1::before {
-  content: "H1";
-  top: 0.7rem;
-}
-
-#write h2::before {
-  content: "H2";
-  top: 0.37rem;
-}
-
-#write h3::before {
-  content: "H3";
-  top: 0.15rem;
-}
-
-#write h4::before {
-  content: "H4";
-}
-
-#write h5::before {
-  content: "H5";
-}
-
-#write h6::before {
-  content: "H6";
-}
-
-/* Image meta text */
-#write .md-image > .md-meta {
-  color: var(--meta-content-color);
-}
-
-/* Inline styles */
-.md-rawblock-tooltip {
-  top: -1.5rem;
-  height: 1.5rem;
-  padding: 0.25rem;
-}
-
-/* Search results */
-.md-search-hit {
-  background: var(--search-hit-bg-color);
-  border-radius: 0.125em;
-}
-
-.md-search-select {
-  background: var(--search-select-bg-color);
-  border: 1px solid var(--megamenu-button-border-color);
-  padding: 0 1px;
-}
-
-/* Focus mode */
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) *,
-.on-focus-mode pre.md-end-block:not(.md-focus):not(.md-focus-container) {
-  color: var(--md-char-color) !important;
-}
-
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) img,
-.on-focus-mode
-  blockquote
-  .md-end-block:not(.md-focus):not(.md-focus-container)::before,
-.on-focus-mode li:not(.md-focus-container)::before {
-  opacity: 0.5;
-}
-
-.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) mark {
-  background: var(--accent-color);
-}
-
-/* UI Sidebar */
-#typora-sidebar {
-  border-right: 1px solid #19191c;
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
 }
 
 .sidebar-tabs {
-  font-family: "Vazir-Bold";
-  border-bottom: 1px solid black;
+    border-bottom: none;
 }
 
-.file-list-item-file-name {
-  font-family: "Vazir-Bold";
-  font-size: 1.2rem;
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
 }
 
-input.file-list-item-file-name, input.file-tree-rename-input {
-  background: var(--side-bar-bg-color);
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
 }
 
-#file-library-search .file-list-item-file-name {
-  font-size: 1.1rem;
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
 }
 
-#file-library-search .ty-search-item.active {
-  background: var(--active-search-item-bg-color);
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
 }
 
-#file-library-search-input {
-  background: var(--side-bar-bg-color);
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
 }
 
-.file-list-item-summary,
-.ty-search-item-line {
-  font-family: "Vazir", "Lato", sans-serif;
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
 }
 
-.ty-file-search-match-text,
-.ty-outline-hit {
-  font-weight: bold;
-  background: transparent;
+.md-lang {
+    color: #b4654d;
 }
 
-#outline-content {
-  line-height: 1.4em;
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
 }
 
-#outline-content .outline-h1 > .outline-item {
-  font-family: "Vazir-Bold";
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
 }
 
-.file-library-node,
-.file-library-node .file-node-background {
-  transition: background 0.4s;
+.ty-preferences .window-content {
+    background-color: #fafafa;
 }
 
-.file-tree-node.file-library-file-node:not(.active):hover .file-node-background,
-.file-list-item.file-library-node:not(.active):hover {
-  background: var(--item-hover-bg-color);
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
 }
 
-.file-tree-node.file-library-file-node.active .file-node-background,
-.file-list-item.file-library-file-node.active {
-  border-left: 5px solid var(--primary-color);
-}
-
-/* Remove blinking animation when updating filename */
-.blink-area {
-  animation: none;
-}
-
-#ty-sidebar-footer {
-  border-top: 1px solid black;
-}
-
-.sidebar-footer-item {
-  transition: background 0.3s;
-}
-
-.outline-title-wrapper,
-.outline-item-wrapper.outline-h1 > .outline-item {
-  font-family: "Vazir-Bold";
-  font-weight: bold;
-}
-
-/* Windows-specific */
-/* Context and dropdown menus */
-ul.dropdown-menu li.active a,
-ul.dropdown-menu li.has-extra-menu.active a,
-ul.dropdown-menu li.has-btn-submenu a.menu-style-btn.active,
-#footer-word-count-info .ty-footer-word-count-all tr:hover,
-#ty-spell-check-dict-missing-menu li:hover,
-.ty-spell-check-panel-item.ty-active,
-.ty-spell-check-panel-item:hover {
-  background: var(--text-color) !important;
-  color: var(--bg-color) !important;
-}
-
-/* Windows Unibody */
-footer.ty-footer {
-  border-top: 0;
-}
-
-.footer-item:hover {
-  background: var(--text-color) !important;
-  color: var(--bg-color) !important;
-}
-
-.form-control:focus {
-  border-color: var(--primary-color);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 2px var(--primary-color);
-}
-
-/* Windows Unibody megamenu */
-.megamenu-opened header {
-  background-image: none;
-}
-
-#top-titlebar, #top-titlebar * {
-  color: inherit;
-}
-
-#megamenu-content {
-  padding-top: 28px;
-  background: var(--megamenu-bg-color);
-  color: var(--text-color);
-}
-
-.megamenu-menu-panel:not(:first-of-type) {
-  margin-top: 48px;
-}
-
-#megamenu-content .long-btn {
-  border-color: var(--megamenu-button-border-color);
-  transition: all 0.4s;
-}
-
-#megamenu-content .long-btn:hover {
-  border-color: var(--primary-color);
-  background: var(--megamenu-item-hover-bg-color);
-  color: var(--megamenu-item-hover-text-color) !important;
-}
-
-#recent-file-panel-action-btn {
-  background: inherit;
-  border-color: var(--megamenu-button-border-color);
-  transition: all 0.4s;
-}
-
-#recent-file-panel-action-btn:hover {
-  border-color: var(--primary-color);
-  background: var(--megamenu-item-hover-bg-color);
-  color: var(--megamenu-item-hover-text-color);
-}
-
-#recent-document-table {
-  border: 1px solid var(--accent-color);
-}
-
-#recent-file-panel tbody tr:nth-child(2n-1) {
-  background-color: inherit;
-}
-
-#recent-file-panel tbody tr:hover {
-  background-color: var(--megamenu-item-hover-bg-color) !important;
-}
-
-#recent-file-panel tbody tr:hover td:nth-child(1) {
-  color: var(--megamenu-item-hover-text-color);
-}
-
-/* Windows Unibody sidebar */
-#megamenu-menu-sidebar {
-  background: var(--megamenu-sidebar-bg-color);
-  color: var(--text-color);
-}
-
-.megamenu-menu-header, .megamenu-menu-list li:not(.saved) a {
-  transition: all 0.4s;
-}
-
-.megamenu-menu-header {
-  border-bottom: var(--window-border);
-}
-
-.megamenu-menu-header:hover, .megamenu-menu-list li:not(.saved) a:not(.active):hover {
-  background: var(--megamenu-sidebar-hover-bg-color);
-}
-
-.megamenu-menu-list li a.active {
-  background: var(--megamenu-sidebar-active-bg-color) !important;
-}
-
-#m-saved {
-  background: inherit;
-  color: inherit;
-}
-
-#megamenu-menu-list {
-  margin: 0;
-}
-
-.theme-preview-div {
-  transition: all 0.4s;
-}
-
-.theme-preview-div:hover {
-  border: 4px solid var(--primary-btn-border-color);
-}
-
-.theme-preview-div.active, .theme-preview-div.active:hover {
-  border: 4px solid var(--primary-color);
-}
-
-.theme-preview-div.active i {
-  color: var(--primary-color);
-}
-
-/* Source Code */
-.cm-s-typora-default .cm-s-inner.CodeMirror-line {
-  border: 0 !important;
-}
-
-/* Print/PDF */
-@media print {
-  #write ol > li,
-  #write ul > li {
-    color: var(--text-color);
-  }
-  #write h1::before, #write h2::before, #write h3::before,
-  #write h4::before, #write h5::before, #write h6::before {
-    display: none;
-  }
-}
-
-/* Theme adapted from https.//codemirror.net/theme/3024-day.css */
-/*
-
-    Name:       3024 day
-    Author:     Jan T. Sott (http://github.com/idleberg)
-
-    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
-    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-
-*/
-
-.cm-s-inner.CodeMirror, .cm-s-inner .CodeMirror-gutters {
-  background: #f7f7f7 !important;
-  color: #3a3432 !important;
-}
-
-.cm-s-inner .CodeMirror-cursor {
-  border-left: solid thin #3a3432 !important;
-}
-
-.cm-s-inner .CodeMirror-line::selection, .cm-s-inner .CodeMirror-line > span::selection, .cm-s-inner .CodeMirror-line > span > span::selection { background: #d6d5d4; }
-.cm-s-inner .CodeMirror-line::-moz-selection, .cm-s-inner .CodeMirror-line > span::-moz-selection, .cm-s-inner .CodeMirror-line > span > span::selection { background: #d9d9d9; }
-
-.cm-s-inner .CodeMirror-gutters { background: #f7f7f7; border-right: 0px; }
-.cm-s-inner .CodeMirror-guttermarker { color: #db2d20; }
-.cm-s-inner .CodeMirror-guttermarker-subtle { color: #807d7c; }
-.cm-s-inner .CodeMirror-linenumber { color: #807d7c; }
-
-.cm-s-inner .CodeMirror-cursor { border-left: 1px solid #5c5855; }
-
-.cm-s-inner span.cm-comment { color: #cdab53; }
-.cm-s-inner span.cm-atom { color: #a16a94; }
-.cm-s-inner span.cm-meta { color: inherit; }
-.cm-s-inner span.cm-number { color: #a16a94; }
-
-.cm-s-inner span.cm-property, .cm-s-inner span.cm-attribute { color: #01a252; }
-.cm-s-inner span.cm-keyword { color: #db2d20; }
-.cm-s-inner span.cm-string { color: #f2b01d; }
-
-.cm-s-inner span.cm-variable { color: #01a252; }
-.cm-s-inner span.cm-variable-2 { color: #01a0e4; }
-.cm-s-inner span.cm-def { color: #e8bbd0; }
-.cm-s-inner span.cm-bracket { color: #3a3432; }
-.cm-s-inner span.cm-tag { color: #db2d20; }
-.cm-s-inner span.cm-link { color: #a16a94; }
-.cm-s-inner span.cm-error { background: #db2d20; color: #5c5855; }
-
-.cm-s-inner .CodeMirror-activeline-background { background: #e8f2ff; }
-.cm-s-inner .CodeMirror-matchingbracket { text-decoration: underline; color: #a16a94 !important; }
-
-.CodeMirror-selectedtext, .CodeMirror-selected {
-  background: #f4dbdb !important;
-}
-/* 
-  Middle East - Day
-  Typora RTL theme
-  design: isapanah.com
-  date: 2019
-  version: 1.1
-*/
-
-@import url("file:///C://Users//oyy//AppData//Roaming//Typora/themes/");
-@import url("file:///C://Users//oyy//AppData//Roaming//Typora/themes/");
-
-/** ROOT VARIABLES **/
-:root {
-  --bg-color: #fbfbfb; /* change background */
-  --text-color: #333333; /* change text color */
-  --md-char-color: #b4b4b4; /* change color of meta characetrs like `*` in markdown */
-  --meta-content-color: #757575; /* change color of meta contents like image text or link address in markdown */
-  --link-color: #db4d52; /* change color of hyperlinks */
-
-  --primary-color: #db4d52; /* primary color */
-  --primary-btn-border-color: #be2f34; /* primary color for buttons */
-  --primary-btn-text-color: #000; /* primary text color for buttons */
-  --accent-color: #d0d0d0; /* background accent color */
-
-  --window-border: 1px solid #16161a; /* border for sidebar, etc */
-
-  --active-file-bg-color: #16161a; /* background color if list item in file tree or file list */
-  --active-file-text-color: inherit; /* text color for selected file */
-  --active-file-border-color: #777; /* border color for selected file */
-  --active-search-item-bg-color: #23242b; /* background color for active search item */
-
-  --side-bar-bg-color: #2e3235; /* change background of sidebar*/
-  --item-hover-bg-color: #202020; /* background of control items when hover, like menu in sidebar*/
-  --item-hover-text-color: white; /* text color upon hovering over menu items */
-  --search-hit-bg-color: #db4d5230;
-  --search-select-text-color: var(--text-color); /* Text color for selected searched text */
-  --search-select-bg-color: #db4d5270; /* Background color for selected searched text */
-  --rawblock-edit-panel-bd: var(--accent-color); /* Background color for inline HTML "edit panel" blocks */
-  --monospace: "Cousine"; /* monospace font for codes, fences */
-
-  --megamenu-bg-color: var(--bg-color); /* background color for unibody megamenu */
-  --megamenu-sidebar-bg-color: var(--side-bar-bg-color); /* background color for megamenu sidebar */
-  --megamenu-sidebar-hover-bg-color: #161819; /* background color for hovering megamenu sidebar items */
-  --megamenu-sidebar-active-bg-color: #101010; /* background color for active megamenu sidebar items */
-  --megamenu-button-border-color: #9292928f; /* background color for megamenu buttons */
-  --megamenu-item-hover-bg-color: #e6e6e6; /* background color for hovering megamenu items */
-  --megamenu-item-hover-text-color: #222222; /* text color for hovering megamenu items */
-}
-
-/** TAGS **/
-
-mark {
-  background: #adfe96;
-}
-
-code {
-  background: #f7f7f7;
-}
-
-/* Tables */
-thead {
-  background: #d0d0d0;
-}
-
-table tr:nth-child(2n) {
-  background: #e6e6e6;
-}
-
-/* Footnote */
-sup.md-footnote {
-  background: #dddddd;
-}
-
-/* Sidebar */
-#typora-sidebar * {
-  color: var(--bg-color);
-}
-
-/* Windows Unibody sidebar */
-#megamenu-menu-sidebar, .megamenu-menu-list li:not(.saved) a:not(.active):hover, .megamenu-menu-list li a.active {
-  color: var(--bg-color) !important;
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
 }
 
 
@@ -1123,9 +593,9 @@ sup.md-footnote {
 </style><title>book</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><div style="font-family: Vazir">
+<div id='write'  class=''><p>&nbsp;</p><div style="font-family: Vazir;">
 <h3 align="center">
     به نام خدا
-</h3></div><p>&nbsp;</p><blockquote><p><span>طرح درس کارگاه‌ها و کلاســهای </span></p><p><span>علوم رایانه بدون رایانه و ببـراس</span></p></blockquote><p></div></p></div></div>
+</h3></div><p>&nbsp;</p><blockquote><p><span>طرح درس کارگاه‌ها و کلاســهای </span></p><p><span>علوم رایانه بدون رایانه و ببـراس</span></p></blockquote><p></div></p><h2 id='دانلود-کتاب-به-فرمتهای-pdfepub'><span>دانلود کتاب به فرمت‌های PDF/Epub</span></h2><p><span>می‌تونین خیلی راحت از نسخه آنلاین استفاده کنین یا اگه به فایل‌ کتاب می‌خوایین دسترسی داشته باشین، از بخش ریلیزهای گیت هاب</span><span class="hide-in-print"><span>(</span><a href='https://github.com/Mariotek/reactjs-persian-interview-questions/releases'><span>این لینک</span></a><span>)</span></span><span> به فرمت‌های مختلف دانلود کنین.</span></p><h3 id='فهرست'><span>فهرست</span></h3><figure><table><thead><tr><th><span>ردیف</span></th><th><span>سوال</span></th></tr></thead><tbody><tr><td>&nbsp;</td><td><strong><span>هسته ری‌اکت</span></strong></td></tr><tr><td><span>1</span></td><td><a href='#ریاکت-چیه'><span>ری‌اکت چیه؟</span></a></td></tr><tr><td><span>2</span></td><td><a href='#اصلیترین-ویژگیهای-ریاکت-کدوماq-هستن'><span>اصلی‌ترین ویژگی‌های ری‌اکت کدوما هستن؟</span></a></td></tr><tr><td><span>3</span></td><td><a href='#JSX-چیه'><span>JSX چیه؟</span></a></td></tr><tr><td><span>4</span></td><td><a href='#تفاوتهای-Element-و-Component-چیه'><span>تفاوت‌های Element و Component چیه؟</span></a></td></tr><tr><td><span>5</span></td><td><a href='#تو-ریاکت-چطوری-کامپوننت-میسازیم'><span>تو ری‌اکت چطوری کامپوننت می‌سازیم؟</span></a></td></tr><tr><td><span>6</span></td><td><a href='#چه-موقعهایی-باید-از-Class-Component-بجای-Function-Component-استفاده-کنیم'><span>چه موقع‌هایی باید از Class Component بجای Function Component استفاده کنیم؟</span></a></td></tr><tr><td><span>7</span></td><td><a href='#Pure-Components-چیه'><span>Pure Components چیه؟</span></a></td></tr><tr><td><span>8</span></td><td><a href='#state-تو-ریاکت-چیکار-میکنه'><span>state تو ری‌اکت چیکار می‌کنه؟</span></a></td></tr><tr><td><span>9</span></td><td><a href='#props-تو-ریاکت-چیکار-میکنه'><span>props تو ری‌اکت چیکار می‌کنه؟</span></a></td></tr><tr><td><span>10</span></td><td><a href='#تفاوت-state-و-props-چیه'><span>تفاوت state و props چیه؟</span></a></td></tr><tr><td><span>11</span></td><td><a href='#چرا-نباید-state-رو-مستقیما-آپدیت-کنیم'><span>چرا نباید state رو مستقیما آپدیت کنیم؟</span></a></td></tr><tr><td><span>12</span></td><td><a href='#هدف-از-متدهای-callback-موقع-استفاده-از-setState-چیه'><span>هدف از متدهای callback موقع استفاده از setState چیه؟</span></a></td></tr><tr><td><span>13</span></td><td><a href='#تفاوت-بین-نحوه-مدیریت-رویداد-HTML-و-React-چیه'><span>تفاوت بین نحوه مدیریت رویداد HTML و React چیه؟</span></a></td></tr><tr><td><span>14</span></td><td><a href='#چطوری-متد-یا-event-رو-به-تابع-callback-توی-JSX-bind-کنیم'><span>چطوری متد یا event رو به تابع callback توی JSX bind کنیم؟</span></a></td></tr><tr><td><span>15</span></td><td><a href='#چطوری-میشه-یک-مقدار-رو-به-یه-تابع-callback-یا-eventHandler-پاس-بدیم'><span>چطوری میشه یک مقدار رو به یه تابع callback یا eventHandler پاس بدیم؟</span></a></td></tr><tr><td><span>16</span></td><td><a href='#synthetic-eventsرویدادهای-مصنوعی-تو-ریاکت-چیا-هستن'><span>Synthetic events(رویدادهای مصنوعی) تو ری‌اکت کدوما هستن؟</span></a></td></tr><tr><td><span>17</span></td><td><a href='#عبارات-شرطی-درون-خطی-چیه'><span>عبارات شرطی درون خطی چیه؟</span></a></td></tr><tr><td><span>18</span></td><td><a href='#پارامترهای-key-چیکار-می‌کنن-و-مزایای-استفاده-از-اونا-توی-حلقه‌ها-چیه'><span>پارامترهای key چیکار می‌کنن و مزایای استفاده از اونا توی حلقه‌ها چیه؟</span></a></td></tr><tr><td><span>19</span></td><td><a href='#کاربرد-refها-چیه'><span>کاربرد refها چیه؟</span></a></td></tr><tr><td><span>20</span></td><td><a href='#چطوری-از-ref-استفاده-کنیم'><span>چطوری از ref استفاده کنیم؟</span></a></td></tr><tr><td><span>21</span></td><td><a href='#forward-ref-چیه'><span>forward ref چیه؟</span></a></td></tr><tr><td><span>22</span></td><td><a href='#بین-callback-refs-و-تابع-findDOMNode-کدوم-رو-ترجیح-میدی'><span>بین callback refs و تابع findDOMNode کدوم رو ترجیح میدی؟</span></a></td></tr><tr><td><span>23</span></td><td><a href='#چرا-Refهای-متنی-منقضی-محسوب-میشوند'><span>چرا Refهای متنی منقضی محسوب می‌شوند؟</span></a></td></tr><tr><td><span>24</span></td><td><a href='#Virtual-DOM-چیه'><span>Virtual DOM چیه؟</span></a></td></tr><tr><td><span>25</span></td><td><a href='#Virtual-DOM-چطوری-کار-میکنه'><span>Virtual DOM چطوری کار می‌کنه؟</span></a></td></tr><tr><td><span>26</span></td><td><a href='#تفاوت-بین-Shadow-DOM-و-Virtual-DOM-چیه'><span>تفاوت بین Shadow DOM و Virtual DOM چیه؟</span></a></td></tr><tr><td><span>27</span></td><td><a href='#React-Fiber-چیه'><span>React Fiber چیه؟</span></a></td></tr><tr><td><span>28</span></td><td><a href='#هدف-اصلی-React-Fiber-چیه'><span>هدف اصلی React Fiber چیه؟</span></a></td></tr><tr><td><span>29</span></td><td><a href='#کامپوننتهای-کنترل-شده-چی-هستن'><span>کامپوننت‌های کنترل شده چی هستن؟</span></a></td></tr><tr><td><span>30</span></td><td><a href='#کامپوننتهای-کنترل-نشده-چی-هستن'><span>کامپوننت‌های کنترل نشده چی هستن؟</span></a></td></tr><tr><td><span>31</span></td><td><a href='#تفاوتهای-بین-createElement-و-cloneElement-چیا-هستن'><span>تفاوت‌های بین createElement و cloneElement کدوما هستن؟</span></a></td></tr><tr><td><span>32</span></td><td><a href='#مفهوم-lift-state-up-یا-مدیریت-state-در-لول-بالاتر-رو-توضیح-میدی'><span>مفهوم lift state up یا مدیریت state در لول بالاتر رو توضیح میدی؟</span></a></td></tr><tr><td><span>33</span></td><td><a href='#فازهای-مختلف-از-lifecycle-کامپوننت-چیا-هستن'><span>فازهای مختلف از lifecycle کامپوننت کدوما هستن؟</span></a></td></tr><tr><td><span>34</span></td><td><a href='#متدهای-lifecycle-کامپوننت-چیا-هستن'><span>متدهای lifecycle کامپوننت کدوما هستن؟</span></a></td></tr><tr><td><span>35</span></td><td><a href='#کامپوننتهای-Higher-Order-چی-هستن'><span>کامپوننت‌های Higher-Order چی هستن؟</span></a></td></tr><tr><td><span>36</span></td><td><a href='#چطوری-می‌تونیم-props-proxy-برای-کامپوننتهای-HOC-ایجاد-کنیم'><span>چطوری می‌تونیم props proxy برای کامپوننت‌های HOC ایجاد کنیم؟</span></a></td></tr><tr><td><span>37</span></td><td><a href='#context-چیه'><span>context چیه؟</span></a></td></tr><tr><td><span>38</span></td><td><a href='#children-prop-چیه'><span>children prop چیه؟</span></a></td></tr><tr><td><span>39</span></td><td><a href='#چطوری-میشه-تو-React-کامنت-نوشت'><span>چطوری میشه تو React کامنت نوشت؟</span></a></td></tr><tr><td><span>40</span></td><td><a href='#چرا-توی-کامپوننتهای-کلاس-باید-توی-constructor-تابع-super-رو-با-مقدار-props-صدا-بزنیم'><span>چرا توی کامپوننت‌های کلاس باید توی constructor تابع super رو با مقدار props صدا بزنیم؟</span></a></td></tr><tr><td><span>41</span></td><td><a href='#reconciliation-چیه'><span>reconciliation چیه؟</span></a></td></tr><tr><td><span>42</span></td><td><a href='#چطوری-با-یه-اسم-داینامیک-set-state-کنیم'><span>چطوری با یه اسم داینامیک set state کنیم؟</span></a></td></tr><tr><td><span>43</span></td><td><a href='#یه-اشتباه-رایج-برای-مدیریت-توابع-eventها-که-باعث-میشه-با-هر-رندر-توابع-مجدد-ساخته-بشن-چی-هستش'><span>یه اشتباه رایج برای مدیریت توابع eventها که باعث میشه با هر رندر توابع مجدد ساخته بشن چی هستش؟</span></a></td></tr><tr><td><span>44</span></td><td><a href='#تابع-lazy-که-برای-lazy-load-استفاده-میشه-رو-می‌تونیم-به-صورت-name-export-خروجی-بگیریم'><span>تابع lazy که برای lazy load استفاده میشه رو می‌تونیم به صورت name export خروجی بگیریم؟</span></a></td></tr><tr><td><span>45</span></td><td><a href='#چرا-ریاکت-از-className-بجای-class-استفاده-میکنه'><span>چرا ری‌اکت از className بجای class استفاده می‌کنه؟</span></a></td></tr><tr><td><span>46</span></td><td><a href='#fragmentها-چی-هستن'><span>fragmentها چی هستن؟</span></a></td></tr><tr><td><span>47</span></td><td><a href='#چرا-fragmentها-از-تگهای-div-بهترن'><span>چرا fragmentها از تگ‌های div بهترن؟</span></a></td></tr><tr><td><span>48</span></td><td><a href='#توی-ریاکت-portalها-چیکار-می‌کنن'><span>توی ری‌اکت portal‌ها چیکار می‌کنن؟</span></a></td></tr><tr><td><span>49</span></td><td><a href='#کامپوننت-stateless-چیه'><span>کامپوننت stateless چیه؟</span></a></td></tr><tr><td><span>50</span></td><td><a href='#کامپوننت-stateful-چیه'><span>کامپوننت stateful چیه؟</span></a></td></tr><tr><td><span>51</span></td><td><a href='#چطوری-propهای-کامپوننت-رو-اعتبارسنجی-کنیم'><span>چطوری prop‌های کامپوننت رو اعتبارسنجی کنیم؟</span></a></td></tr><tr><td><span>52</span></td><td><a href='#مزایای-React-چیه'><span>مزایای React چیه؟</span></a></td></tr><tr><td><span>53</span></td><td><a href='#محدودیت-های-React-چیه'><span>محدودیت‌های React چیه؟</span></a></td></tr><tr><td><span>54</span></td><td><a href='#error-boundaryها-توی-ریاکت-نسخه-16-چیکار-می‌کنن'><span>error boundaryها توی ری‌اکت نسخه 16 چیکار می‌کنن؟</span></a></td></tr><tr><td><span>55</span></td><td><a href='#چطوری-از-error-boundaryها-توی-نسخه-15-ریاکت-استفاده-کنیم'><span>چطوری از error boundaryها توی نسخه 15 ری‌اکت استفاده کنیم؟</span></a></td></tr><tr><td><span>56</span></td><td><a href='#روشهای-پیشنهادی-برای-type-checking-چیه'><span>روش‌های پیشنهادی برای type checking چیه؟</span></a></td></tr><tr><td><span>57</span></td><td><a href='#کاربرد-پکیج-react-dom-چیه'><span>کاربرد پکیج react-dom چیه؟</span></a></td></tr><tr><td><span>58</span></td><td><a href='#کاربرد-متد-render-از-پکیج-react-dom-چیه'><span>کاربرد متد render از پکیج react-dom چیه؟</span></a></td></tr><tr><td><span>59</span></td><td><a href='#ReactDOMServer-چیه'><span>ReactDOMServer چیه؟</span></a></td></tr><tr><td><span>60</span></td><td><a href='#چطوری-از-InnerHtml-توی-ریاکت-استفاده-کنیم'><span>چطوری از InnerHtml توی ری‌اکت استفاده کنیم؟</span></a></td></tr><tr><td><span>61</span></td><td><a href='#چطوری-توی-ریاکت-استایلدهی-می‌کنیم'><span>چطوری توی ری‌اکت استایل‌دهی می‌کنیم؟</span></a></td></tr><tr><td><span>62</span></td><td><a href='#تفاوت-eventهای-ریاکت-چیه'><span>تفاوت eventهای ری‌اکت چیه؟</span></a></td></tr><tr><td><span>63</span></td><td><a href='#اگه-توی-constructor-بیاییم-و-setState-کنیم-چی-میشه'><span>اگه توی constructor بیاییم و setState کنیم چی میشه؟</span></a></td></tr><tr><td><span>64</span></td><td><a href='#تاثیر-استفاده-از-ایندکس-به-عنوان-key-چیه'><span>تاثیر استفاده از ایندکس به عنوان key چیه؟</span></a></td></tr><tr><td><span>65</span></td><td><a href='#نظرت-راجع-به-استفاده-از-setState-توی-متد-componentWillMount-چیه'><span>نظرت راجع به استفاده از setState توی متد componentWillMount چیه؟</span></a></td></tr><tr><td><span>66</span></td><td><a href='#اگه-از-prop-توی-مقداردهی-اولیه-state-استفاده-کنیم-چی-میشه'><span>اگه از prop توی مقداردهی اولیه state استفاده کنیم چی میشه؟</span></a></td></tr><tr><td><span>67</span></td><td><a href='#چطوری-کامپوننت-رو-با-بررسی-یه-شریط-رندر-می‌کنیم'><span>چطوری کامپوننت رو با بررسی یه شریط رندر می‌کنیم؟</span></a></td></tr><tr><td><span>68</span></td><td><a href='#چرا-وقتی-propها-رو-روی-یه-DOM-Elemnt-میآییم-spread-می‌کنیم-باید-مراقب-باشیم'><span>چرا وقتی propها رو روی یه DOM Elemnt می‌آییم spread می‌کنیم باید مراقب باشیم؟</span></a></td></tr><tr><td><span>69</span></td><td><a href='#چطوری-از-decoratorها-توی-ریاکت-استفاده-کنیم'><span>چطوری از decoratorها توی ری‌اکت استفاده کنیم؟</span></a></td></tr><tr><td><span>70</span></td><td><a href='#چطوری-یه-کامپوننت-رو-memoize-می‌کنیم'><span>چطوری یه کامپوننت رو memoize می‌کنیم؟</span></a></td></tr><tr><td><span>71</span></td><td><a href='#چطوری-باید-Server-Side-Rendering-یا-SSR-رو-توی-ریاکت-پیاده-کنیم'><span>چطوری باید Server-Side Rendering یا SSR رو توی ری‌اکت پیاده کنیم؟</span></a></td></tr><tr><td><span>72</span></td><td><a href='#چطوری-حالت-production-رو-برای-ریاکت-فعال-کنیم'><span>چطوری حالت production رو برای ری‌اکت فعال کنیم؟</span></a></td></tr><tr><td><span>73</span></td><td><a href='#CRA-چیه-و-چه-مزایایی-داره'><span>CRA چیه و چه مزایایی داره؟</span></a></td></tr><tr><td><span>74</span></td><td><a href='#ترتیب-اجرا-شدن-متدهای-life-cycle-چطوریه'><span>ترتیب اجرا شدن متد‌های life cycle چطوریه؟</span></a></td></tr><tr><td><span>75</span></td><td><a href='#کدوم-متدهای-life-cycle-توی-نسخه-16-ریاکت-منسوخ-شدن'><span>کدوم متد‌های life cycle توی نسخه 16 ری‌اکت منسوخ شدن؟</span></a></td></tr><tr><td><span>76</span></td><td><a href='#کاربرد-متد-getDerivedStateFromProps-چیه'><span>کاربرد متد getDerivedStateFromProps چیه؟</span></a></td></tr><tr><td><span>77</span></td><td><a href='#کاربرد-متد-getSnapshotBeforeUpdate-چیه'><span>کاربرد متد getSnapshotBeforeUpdate چیه؟</span></a></td></tr><tr><td><span>78</span></td><td><a href='#آیا-هوکها-جای-render-props-و-HOC-رو-میگیرن'><span>آیا هوک‌ها جای render props و HOC رو می‌گیرن؟</span></a></td></tr><tr><td><span>79</span></td><td><a href='#روش-توصیه-شده-برای-نامگذاری-کامپوننتها-چیه'><span>روش توصیه شده برای نام‌گذاری کامپوننت‌ها چیه؟</span></a></td></tr><tr><td><span>80</span></td><td><a href='#روش-توصیه-شده-برای-ترتیب-متدها-در-کلاس-کامپوننتها-چیه'><span>روش توصیه شده برای ترتیب متدها در کلاس کامپوننت‌ها چیه؟</span></a></td></tr><tr><td><span>81</span></td><td><a href='#کامپوننت-تعویض-کننده-یا-switching-چیه'><span>کامپوننت تعویض کننده یا switching چیه؟</span></a></td></tr><tr><td><span>82</span></td><td><a href='#چرا-نیاز-میشه-به-تابع-setState-یه-فانکشن-callback-پاس-بدیم'><span>چرا نیاز میشه به تابع setState یه فانکشن callback پاس بدیم؟</span></a></td></tr><tr><td><span>83</span></td><td><a href='#حالت-strict-توی-ریاکت-چیکار-میکنه'><span>حالت strict توی ری‌اکت چیکار می‌کنه؟</span></a></td></tr><tr><td><span>84</span></td><td><a href='#Mixinهای-ریاکت-چی-هستن'><span>Mixin‌های ری‌اکت چی هستن؟</span></a></td></tr><tr><td><span>85</span></td><td><a href='#چرا-isMounted-آنتی-پترن-هست-و-روش-بهتر-انجامش-چیه'><span>چرا isMounted آنتی پترن هست و روش بهتر انجامش چیه؟</span></a></td></tr><tr><td><span>86</span></td><td><a href='#پشتیبانی-ریاکت-از-pointer-eventها-چطوریه'><span>پشتیبانی ری‌اکت از pointer eventها چطوریه؟</span></a></td></tr><tr><td><span>87</span></td><td><a href='#چرا-باید-اسم-کامپوننت-با-حرف-بزرگ-شروع-بشه'><span>چرا باید اسم کامپوننت با حرف بزرگ شروع بشه؟</span></a></td></tr><tr><td><span>88</span></td><td><a href='#آیا-propهای-custom-توی-ریاکت-پشتیبانی-میشن'><span>آیا propهای custom توی ری‌اکت پشتیبانی میشن؟</span></a></td></tr><tr><td><span>89</span></td><td><a href='#تفاوتهای-constructor-و-getInitialState-چیه'><span>تفاوت‌های constructor و getInitialState چیه؟</span></a></td></tr><tr><td><span>90</span></td><td><a href='#می‌تونیم-یه-کامپوننت-رو-بدون-setState-ریرندر-کنیم'><span>می‌تونیم یه کامپوننت رو بدون setState ری‌رندر کنیم؟</span></a></td></tr><tr><td><span>91</span></td><td><a href='#تفاوتهای-فراخوانی-super-و-superprops-توی-کلاس-کامپوننتهای-ریاکت-چیه'><span>تفاوت‌های فراخوانی super(-) و super(props) توی کلاس کامپوننت‌های ری‌اکت چیه؟</span></a></td></tr><tr><td><span>92</span></td><td><a href='#چطوری-توی-JSX-حلقه-یا-همون-لوپ-رو-داشته-باشیم'><span>چطوری توی JSX حلقه یا همون لوپ رو داشته باشیم؟</span></a></td></tr><tr><td><span>93</span></td><td><a href='#توی-attributeها-چطوری-به-prop-دسترسی-داشته-باشیم'><span>توی attributeها چطوری به prop دسترسی داشته باشیم؟</span></a></td></tr><tr><td><span>94</span></td><td><a href='#چطوری-یه-PropType-برای-آرایهای-از-objectها-با-shape-داشته-باشیم'><span>چطوری یه PropType برای ‌آرایه‌ای از objectها با shape داشته باشیم؟</span></a></td></tr><tr><td><span>95</span></td><td><a href='#چطوری-classهای-یه-المنت-رو-به-صورت-شرطی-رندر-کنیم'><span>چطوری classهای یه المنت رو به صورت شرطی رندر کنیم؟</span></a></td></tr><tr><td><span>96</span></td><td><a href='#تفاوتهای-React-و-ReactDOM-چیه'><span>تفاوت‌های React و ReactDOM چیه؟</span></a></td></tr><tr><td><span>97</span></td><td><a href='#چرا-ReactDOM-رو-از-React-جدا-کردن'><span>چرا ReactDOM رو از React جدا کردن؟</span></a></td></tr><tr><td><span>98</span></td><td><a href='#چطوری-از-label-تو-ریاکت-استفاده-کنیم'><span>چطوری از label تو ری‌اکت استفاده کنیم؟</span></a></td></tr><tr><td><span>99</span></td><td><a href='#چطوری-می‌تونیم-چندتا-object-از-استایلهای-درون-خطی-رو-با-هم-ترکیب-کنیم'><span>چطوری می‌تونیم چندتا object از استایل‌های درون خطی رو با هم ترکیب کنیم؟</span></a></td></tr><tr><td><span>100</span></td><td><a href='#چطوری-با-resize-شدن-مرورگر-یه-ویو-رو-ریرندر-کنیم'><span>چطوری با resize شدن مرورگر یه ویو رو ری‌رندر کنیم؟</span></a></td></tr><tr><td><span>101</span></td><td><a href='#تفاوت-متدهای-setState-و-replaceState-چیه'><span>تفاوت متدهای setState و replaceState چیه؟</span></a></td></tr><tr><td><span>102</span></td><td><a href='#چطوری-به-تغییرات-state-گوش-بدیم'><span>چطوری به تغییرات state گوش بدیم؟</span></a></td></tr><tr><td><span>103</span></td><td><a href='#روش-توصیه-شده-برای-حذف-یک-عنصر-از-آرایه-توی-state-چیه'><span>روش توصیه شده برای حذف یک عنصر از آرایه توی state چیه؟</span></a></td></tr><tr><td><span>104</span></td><td><a href='#امکانش-هست-که-ریاکت-رو-بدون-رندر-کردن-HTML-استفاده-کنیم'><span>امکانش هست که ری‌اکت رو بدون رندر کردن HTML استفاده کنیم؟</span></a></td></tr><tr><td><span>105</span></td><td><a href='#چطوری-میشه-با-ریاکت-یه-JSON-به-شکل-beautify-شده-نشون-داد'><span>چطوری میشه با ری‌اکت یه JSON به شکل beautify شده نشون داد؟</span></a></td></tr><tr><td><span>106</span></td><td><a href='#چرا-نمی‌تونیم-prop-رو-آپدیت-کنیم'><span>چرا نمی‌تونیم prop رو آپدیت کنیم؟</span></a></td></tr><tr><td><span>107</span></td><td><a href='#چطوری-می‌تونیم-موقع-لود-صفحه-روی-یه-input-فوکوس-کنیم'><span>چطوری می‌تونیم موقع لود صفحه روی یه input فوکوس کنیم؟</span></a></td></tr><tr><td><span>108</span></td><td><a href='#روشهای-ممکن-برای-آپدیت-کردن-object-توی-state-چیا-هستن'><span>روش‌های ممکن برای آپدیت کردن object توی state کدوما هستن؟</span></a></td></tr><tr><td><span>109</span></td><td><a href='#چرا-توابع-به-جای-object-در-setState-ترجیح-داده-میشوند'><span>چرا توابع به جای object در setState ترجیح داده می‌شوند؟</span></a></td></tr><tr><td><span>110</span></td><td><a href='#چطوری-می‌تونیم-نسخه-ریاکت-جاری-رو-توی-محیط-اجرایی-بفهمیم'><span>چطوری می‌‌تونیم نسخه ری‌اکت جاری رو توی محیط اجرایی بفهمیم؟</span></a></td></tr><tr><td><span>111</span></td><td><a href='#روشهای-لود-کردن-polyfill-توی-CRA-چیا-هستن'><span>روش‌های لود کردن polyfill توی CRA کدوما هستن؟</span></a></td></tr><tr><td><span>112</span></td><td><a href='#توی-CRA-چطوری-از-https-بهجای-http-استفاده-کنیم'><span>توی CRA چطوری از https به‌جای http استفاده کنیم؟</span></a></td></tr><tr><td><span>113</span></td><td><a href='#توی-CRA-چطوری-میشه-از-مسیرهای-طولانی-برای-ایمپورت-جلوگیری-کرد'><span>توی CRA چطوری میشه از مسیر‌های طولانی برای ایمپورت جلوگیری کرد؟</span></a></td></tr><tr><td><span>114</span></td><td><a href='#چطوری-میشه-Google-Analytics-رو-به-react-router-اضافه-کرد'><span>چطوری میشه Google Analytics رو به react-router اضافه کرد؟</span></a></td></tr><tr><td><span>115</span></td><td><a href='#چطوری-یه-کامپوننت-رو-هر-ثانیه-به-روز-کنیم'><span>چطوری یه کامپوننت رو هر ثانیه به روز کنیم؟</span></a></td></tr><tr><td><span>116</span></td><td><a href='#برای-استایلدهیهای-درون-خطی-چطوری-باید-پیشوندهای-مخصوص-مرورگرها-رو-اضافه-کرد'><span>برای استایل‌دهی‌های درون خطی چطوری باید پیشوند‌های مخصوص مرورگرها رو اضافه کرد؟</span></a></td></tr><tr><td><span>117</span></td><td><a href='#چطوری-کامپوننتهای-ریاکت-رو-با-es6-می‌تونیم-import-و-export-کنیم'><span>چطوری کامپوننت‌های ری‌اکت رو با es6 می‌تونیم import و export کنیم؟</span></a></td></tr><tr><td><span>118</span></td><td><a href='#استثنایی-که-برای-نامگذاری-کامپوننت-اجازه-استفاده-از-حرف-کوچک-رو-میده-چیه'><span>استثنایی که برای نام‌گذاری کامپوننت اجازه استفاده از حرف کوچک رو میده چیه؟</span></a></td></tr><tr><td><span>119</span></td><td><a href='#چرا-تابع-سازنده-کلاس-کامپوننت-یکبار-صدا-زده-میشه'><span>چرا تابع سازنده کلاس کامپوننت یکبار صدا زده میشه؟</span></a></td></tr><tr><td><span>120</span></td><td><a href='#توی-ریاکت-چطوری-مقدار-ثابت-تعریف-کنیم'><span>توی ری‌اکت چطوری مقدار ثابت تعریف کنیم؟</span></a></td></tr><tr><td><span>121</span></td><td><a href='#چطوری-توی-برنامه-event-کلیک-شدن-رو-trigger-کنیم'><span>چطوری توی برنامه event کلیک شدن رو trigger کنیم؟</span></a></td></tr><tr><td><span>122</span></td><td><a href='#آیا-استفاده-از-async/await-توی-ریاکت-ممکنه'><span>آیا استفاده از async/await توی ری‌اکت ممکنه؟</span></a></td></tr><tr><td><span>123</span></td><td><a href='#ساختار-پوشهبندی-معروف-برا-ریاکت-چطوریه'><span>ساختار پوشه‌بندی معروف برا ری‌اکت چطوریه؟</span></a></td></tr><tr><td><span>124</span></td><td><a href='#پکیجهای-مشهور-برای-انیمیشن-چیا-هستن'><span>پکیج‌های مشهور برای انیمیشن کدوما هستن؟</span></a></td></tr><tr><td><span>125</span></td><td><a href='#مزایای-ماژولهای-style-چیه'><span>مزایای ماژول‌های style چیه؟</span></a></td></tr><tr><td><span>126</span></td><td><a href='#معروفترین-linterهای-ریاکت-کدوما-هستن'><span>معروف‌ترین linterهای ری‌اکت کدوما هستن؟</span></a></td></tr><tr><td><span>127</span></td><td><a href='#چطوری-باید-توی-کامپوننت-درخواست-api-call-بزنیم'><span>چطوری باید توی کامپوننت درخواست api call بزنیم؟</span></a></td></tr><tr><td><span>128</span></td><td><a href='#render-props-چیه'><span>render props چیه؟</span></a></td></tr><tr><td>&nbsp;</td><td><strong><span>رووتر ری‌اکت</span></strong></td></tr><tr><td><span>129</span></td><td><a href='#React-Router-چیه'><span>React Router چیه؟</span></a></td></tr></tbody></table></figure></div></div>
 </body>
 </html>
